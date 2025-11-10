@@ -47,17 +47,19 @@ Além de replicar os fundamentos (HTML, CSS e JS + consumo de API REST), o proje
 
 ## 🧩 Estrutura do projeto
 
-📦 js-developer-pokedex
- ┣ 📂 assets
- ┃ ┣ 📂 css
- ┃ ┃ ┣ 📜 global.css
- ┃ ┃ ┗ 📜 pokedex.css
- ┃ ┗ 📂 js
- ┃   ┣ 📜 main.js
- ┃   ┣ 📜 poke-api.js
- ┃   ┗ 📜 pokemon-model.js
- ┣ 📜 index.html
- ┗ 📜 README.md
+```
+📦 js-developer-pokedex  
+┣ 📂 assets  
+┃ ┣ 📂 css  
+┃ ┃ ┣ 📜 global.css  
+┃ ┃ ┗ 📜 pokedex.css  
+┃ ┗ 📂 js  
+┃   ┣ 📜 main.js  
+┃   ┣ 📜 poke-api.js  
+┃   ┗ 📜 pokemon-model.js  
+┣ 📜 index.html  
+┗ 📜 README.md  
+```
 
 ---
 
