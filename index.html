@@ -1,46 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokédex</title>
 
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  <!-- Normalize -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-    <!-- Font Roboto -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+  <!-- Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet"/>
 
-    <!-- Nosso CSS -->
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/pokedex.css">
+  <!-- CSS (atenção: SEM barra inicial) -->
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/pokedex.css" />
 </head>
-
 <body>
-    <section class="content">
-        <h1>Pokedex</h1>
+  <section class="content">
+    <h1>Pokédex</h1>
 
-        <ol id="pokemonList" class="pokemons">
-            <!-- ..... Pokemons here ..... -->
-        </ol>
+    <input id="search" class="search" placeholder="Buscar Pokémon..." aria-label="Buscar Pokémon" />
 
-        <div class="pagination">
-            <button id="loadMoreButton" type="button">
-                Load More
-            </button>
+    <!-- Botão Voltar à lista -->
+    <button id="backToList" class="back-btn" type="button" style="display:none">← Voltar à lista</button>
+
+    <ol id="pokemonList" class="pokemons"></ol>
+
+    <div class="pagination">
+      <button id="loadMoreButton" type="button">Carregar mais</button>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="pokeModal" class="poke-modal" aria-hidden="true">
+    <div class="poke-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="pokeTitle">
+      <button class="poke-modal__close" id="closeModal" aria-label="Fechar">×</button>
+      <div class="poke-modal__header">
+        <h2 id="pokeTitle"></h2>
+        <span id="pokeNumber"></span>
+      </div>
+      <div class="poke-modal__body">
+        <img id="pokeImg" alt="" loading="lazy" />
+        <ul id="pokeTypes" class="types"></ul>
+        <div class="poke-info">
+          <p><strong>Altura:</strong> <span id="pokeHeight"></span></p>
+          <p><strong>Peso:</strong> <span id="pokeWeight"></span></p>
+          <p><strong>Habilidades:</strong> <span id="pokeAbilities"></span></p>
         </div>
-    </section>
+        <div id="pokeStats" class="stats"></div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Nosso JS -->
-    <script src="/assets/js/pokemon-model.js"></script>
-    <script src="/assets/js/poke-api.js"></script>
-    <script src="/assets/js/main.js"></script>
+  <!-- JS (atenção: SEM barra inicial) -->
+  <script src="assets/js/pokemon-model.js"></script>
+  <script src="assets/js/poke-api.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
-
 </html>

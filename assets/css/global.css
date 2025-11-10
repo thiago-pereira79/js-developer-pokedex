@@ -1,24 +1,75 @@
+/* =========================
+   GLOBAL.CSS — base visual e layout
+   ========================= */
 * {
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #f6f8fc;
+  /* pokébola de fundo */
+  background:
+    radial-gradient(circle at 50% 45%, #000 0 8px, #fff 8px 18px, #000 18px 26px, transparent 26px),
+    linear-gradient(#ef5350 0 44%, #111 44% 47%, #ffffff 47% 100%);
+  background-attachment: fixed;
+  color: #111;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* container central */
 .content {
-    width: 100vw;
-    height: 100vh;
-    padding: 1rem;
-    background-color: #fff;
+  width: 100vw;
+  min-height: 100dvh; /* evita "pulo" no mobile quando a barra do navegador some */
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.86);
+  border-radius: 1rem;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
 
-@media screen and (min-width: 992px) {
-    .content {
-        max-width: 992px;
-        height: auto;
-        margin: 1rem auto;
-        border-radius: 1rem;
-    }
+/* títulos */
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: .05rem;
+}
+
+/* =========================
+   Responsivo
+   ========================= */
+@media (max-width: 480px) {
+  .content {
+    padding: .75rem;
+    border-radius: .75rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* =========================
+   Desktop (layout amplo)
+   ========================= */
+@media (min-width: 992px) {
+  .content {
+    max-width: 992px;
+    margin: 1rem auto;
+    border-radius: 1rem;
+  }
+}
+
+/* =========================
+   Preferência do usuário
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
 }
